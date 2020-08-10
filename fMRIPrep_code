@@ -1,0 +1,49 @@
+
+#Build fMRIPrep Singularity Container
+singularity build $<FILEPATH>/fmriprep-<VERSION>.simg docker://poldracklab/fmriprep:<VERSION>
+singularity build $<FILEPATH>/fmriprep-20.1.1.simg docker://poldracklab/fmriprep:20.1.1
+
+#Build MRIqc Singularity Container
+singularity build $<FILEPATH>/mriqc-<VERSION>.simg docker://poldracklab/mriqc:<VERSION>
+singularity build $<FILEPATH>/mriqc-0.15.1.simg docker://poldracklab/mriqc:0.15.1
+
+#Build Analysis Singularity Container (one subject per container) - check //poldrack lab...
+build $<FILEPATHTOSUBJECTDATA>.simg docker://poldracklab/ds003-example:0.0.3
+
+##MRIQC
+#Create a batch prescription file
+$<FILEPATH>/mriqc.sbatch
+
+#Submit the job to the scheduler - REVIEW MRIQC DOCS
+sbatch $<FILEPATH>/mriqc.sbatch
+
+##FMRIPREP - OPT 1
+
+#Create a batch prescription file
+$STUDY/fmriprep.sbatch
+
+#Submit the job to the scheduler
+sbatch $STUDY/fmriprep.sbatch
+
+##FMRIPREPR - OPT2
+
+singularity build /<FILEPATH>/fmriprep-20.1.1.simg docker://poldracklab/fmriprep:20.1.1
+
+singularity run --cleanenv fmriprep.simg \
+    <path/to/data/dir> <path/to/output/dir> \
+    participant \
+    --participant-label <SubNo.>
+    --ignore fieldmaps
+    --ignore slicetiming
+    --output-spaces MNI152NLin2009cAsym
+    --bold2t1w-dof 9
+    --use-aroma
+    --skull-strip-template OASIS30ANTs
+    --work-dir <WD FILEPATH>
+
+
+--dummy-scans
+--bold2t1w-init
+Possible choices: register, header
+
+Either “register” (the default) to initialize volumes at center or “header” to use the header information when coregistering BOLD to T1w images.
