@@ -1,11 +1,14 @@
 
 #Build fMRIPrep Singularity Container
 singularity build $<FILEPATH>/fmriprep-<VERSION>.simg docker://poldracklab/fmriprep:<VERSION>
-singularity build $<FILEPATH>/fmriprep-20.1.1.simg docker://poldracklab/fmriprep:20.1.1
+singularity build /home/katie/Code/fmriprep-20.1.1.simg docker://poldracklab/fmriprep:20.1.1
 
 #Build MRIqc Singularity Container
 singularity build $<FILEPATH>/mriqc-<VERSION>.simg docker://poldracklab/mriqc:<VERSION>
-singularity build $<FILEPATH>/mriqc-0.15.1.simg docker://poldracklab/mriqc:0.15.1
+singularity build /home/katie/Code/mriqc-0.15.1.simg docker://poldracklab/mriqc:0.15.1
+
+----
+
 
 #Build Analysis Singularity Container (one subject per container) - check //poldrack lab...
 build $<FILEPATHTOSUBJECTDATA>.simg docker://poldracklab/ds003-example:0.0.3
@@ -27,19 +30,20 @@ sbatch $STUDY/fmriprep.sbatch
 
 ##FMRIPREPR - OPT2
 
-singularity build /<FILEPATH>/fmriprep-20.1.1.simg docker://poldracklab/fmriprep:20.1.1
+singularity build /home/katie/Code/fmriprep-20.1.1.simg docker://poldracklab/fmriprep:20.1.1
 
-singularity run --cleanenv fmriprep.simg \
+singularity run --cleanenv -B /mnt/magaj/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/ fmriprep.simg \
+
     <path/to/data/dir> <path/to/output/dir> \
     participant \
-    --participant-label <SubNo.>
+    --participant-label 01
     --ignore fieldmaps
     --ignore slicetiming
     --output-spaces MNI152NLin2009cAsym
     --bold2t1w-dof 9
     --use-aroma
     --skull-strip-template OASIS30ANTs
-    --work-dir <WD FILEPATH>
+    --work-dir /mnt/magaj/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/
 
 
 --dummy-scans
