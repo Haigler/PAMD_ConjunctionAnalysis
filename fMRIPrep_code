@@ -1,11 +1,11 @@
 
 #Build fMRIPrep Singularity Container
 singularity build $<FILEPATH>/fmriprep-<VERSION>.simg docker://poldracklab/fmriprep:<VERSION>
-singularity build /home/katie/Code/fmriprep-20.1.1.simg docker://poldracklab/fmriprep:20.1.1
+TMPDIR=/home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/Code/tmp singularity build /home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/Code/fmriprep-20.1.1.simg docker://poldracklab/fmriprep:20.1.1
 
 #Build MRIqc Singularity Container
 singularity build $<FILEPATH>/mriqc-<VERSION>.simg docker://poldracklab/mriqc:<VERSION>
-singularity build /home/katie/Code/mriqc-0.15.1.simg docker://poldracklab/mriqc:0.15.1
+TMPDIR=/home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/Code/tmp singularity build /home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/Code/mriqc-0.15.1.simg docker://poldracklab/mriqc:0.15.1
 
 ----
 
