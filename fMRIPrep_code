@@ -9,7 +9,9 @@ TMPDIR=/home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-ka
 
 ----
 
-
+singularity run --cleanenv -B /mnt/magaj/prototyping/emotion-reappraisal-IAPS/ mriqc-0.15.1.simg /mnt/magaj/prototyping/emotion-reappraisal-IAPS/Data/rawdata/ /mnt/magaj/prototyping/emotion-reappraisal-IAPS/Data/derivatives/ participant --participant-label 01 --hmc-fsl --work-dir mnt/magaj/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie --no-sub
+    
+    
 #Build Analysis Singularity Container (one subject per container) - check //poldrack lab...
 build $<FILEPATHTOSUBJECTDATA>.simg docker://poldracklab/ds003-example:0.0.3
 
