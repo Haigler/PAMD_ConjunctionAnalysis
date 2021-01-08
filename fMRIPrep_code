@@ -7,6 +7,28 @@ TMPDIR=/home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-ka
 singularity build $<FILEPATH>/mriqc-<VERSION>.simg docker://poldracklab/mriqc:<VERSION>
 TMPDIR=/home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/Code/tmp singularity build /home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/Code/mriqc-0.15.1.simg docker://poldracklab/mriqc:0.15.1
 
+cd /mnt/magaj/SNAP/Projects/BIDS-Conversion/katie/Code
+
+TMPDIR=/home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/Code/tmp2 \
+    singularity run --fakeroot --cleanenv -B /home/katie/prototyping/emotion-reappraisal-IAPS/Data/affectvids:/data,/home/katie/prototyping/emotion-reappraisal-IAPS/Data/affectvids/derivatives:/out,/mnt/magaj/SNAP/Projects/BIDS-Conversion/katie/Code/freesurfer:/freesurfer,/home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/Code/tmp2:/tmp  fmriprep-20.2.0.simg \
+    /data /out \
+    participant \
+    --participant-label 12 \
+    --ignore fieldmaps \
+    --ignore slicetiming \
+    --output-spaces MNI152NLin2009cAsym \
+    --skull-strip-template OASIS30ANTs \
+    --bold2t1w-dof 9 \
+    --use-aroma \
+    --stop-on-first-crash \
+    --fs-no-reconall \
+    --md-only-boilerplate \
+    --notrack \
+    --error-on-aroma-warnings \
+    --skip_bids_validation \
+    --fs-license-file /freesurfer/license.txt \
+    --work-dir /tmp/fmriprep
+
 ----
 
 singularity run --cleanenv -B /mnt/magaj/prototyping/emotion-reappraisal-IAPS/ mriqc-0.15.1.simg /mnt/magaj/prototyping/emotion-reappraisal-IAPS/Data/rawdata/ /mnt/magaj/prototyping/emotion-reappraisal-IAPS/Data/derivatives/ participant --participant-label 01 --hmc-fsl --work-dir mnt/magaj/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie --no-sub
