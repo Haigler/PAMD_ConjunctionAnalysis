@@ -1,0 +1,6 @@
+#Remove all .mat files
+#Replace subject no.
+
+cd /home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/affectvids/testwHM/1stLevel/sub-05_run2_1lev.feat
+cp $FSLDIR/etc/flirtsch/ident.mat reg/example_func2standard.mat
+cp mean_func.nii.gz reg/standard.nii.gz
