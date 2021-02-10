@@ -1,0 +1,8 @@
+/home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/Code/easythresh_conj/easythresh_conj.sh \
+	-s /home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/affectvids/testwHM/3rdLevel/High-LowValence.gfeat/cope1.feat/stats/smoothness \
+	/home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/affectvids/testwHM/3rdLevel/High-LowValence.gfeat/cope1.feat/stats/zstat1.nii.gz \
+	/home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/affectvids/testwHM/3rdLevel/High-LowValence_Pos.gfeat/cope1.feat/stats/zstat1.nii.gz \
+	/home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/affectvids/testwHM/3rdLevel/High-LowValence.gfeat/cope1.feat/mask.nii.gz \
+	3.1 .05 \
+	/home/katie/prototyping/emotion-reappraisal-IAPS/Projects/Pipeline-Dev-katie/affectvids/testwHM/3rdLevel/High-LowValence.gfeat/cope1.feat/example_func.nii.gz \
+	High-LowValenceConj
