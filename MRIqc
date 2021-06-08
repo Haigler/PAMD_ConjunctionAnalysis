@@ -1,0 +1,25 @@
+#The below code is intended to perform MRIqc on Athak for PAMD
+
+#SETUP: Needs to be performed only the first time
+
+#Copy "Code" directory from /mnt/magaj/CALM/Projects/Quality-Control/katie/ to /mnt/magaj/Levin/Projects/Conjunction-Analysis/MRIqc/
+
+#STEP 1:
+#Copy code below (lines 14-75) into a text file
+#Find and replace #### with the participant number
+
+#STEP 2:
+#Change directory to where MRIqc singularity container is saved
+cd /mnt/magaj/Levin/Projects/Conjunction-Analysis/MRIqc/Code
+
+#STEP 3:
+#RUN MRIqc: fd_thresh .50
+
+TMPDIR=/mnt/magaj/Levin/Projects/Conjunction-Analysis/MRIqc/Code/tmp/ \
+    singularity run --fakeroot --cleanenv -B /mnt/magaj/Levin/Data/PAMD/PAMD_BIDs/:/data,/mnt/magaj/Levin/Data/PAMD/PAMD_BIDs/derivatives/MRIqc/:/out,/mnt/magaj/Levin/Projects/Conjunction-Analysis/MRIqc/Code/tmp/:/tmp  mriqc-0.15.1.simg \
+    /data /out \
+    participant \
+    --participant-label #### \
+    --hmc-fsl \
+    --fd_thres .50 \
+    --work-dir /tmp
