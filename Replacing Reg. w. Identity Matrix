@@ -1,0 +1,18 @@
+#Remove all .mat files in /reg folder
+#Replace 0000 with subject no.
+
+cd /home/katie/Levin/Projects/Conjunction-Analysis/FSL/1stLev/sub-0000_task-affect_run-01_1stLev.feat/
+cp $FSLDIR/etc/flirtsch/ident.mat reg/example_func2standard.mat
+cp mean_func.nii.gz reg/standard.nii.gz
+
+cd /home/katie/Levin/Projects/Conjunction-Analysis/FSL/1stLev/sub-0000_task-affect_run-02_1stLev.feat/
+cp $FSLDIR/etc/flirtsch/ident.mat reg/example_func2standard.mat
+cp mean_func.nii.gz reg/standard.nii.gz
+
+cd /home/katie/Levin/Projects/Conjunction-Analysis/FSL/1stLev/sub-0000_task-infant_run-01_1stLev.feat/
+cp $FSLDIR/etc/flirtsch/ident.mat reg/example_func2standard.mat
+cp mean_func.nii.gz reg/standard.nii.gz
+
+cd /home/katie/Levin/Projects/Conjunction-Analysis/FSL/1stLev/sub-0000_task-infant_run-02_1stLev.feat/
+cp $FSLDIR/etc/flirtsch/ident.mat reg/example_func2standard.mat
+cp mean_func.nii.gz reg/standard.nii.gz
