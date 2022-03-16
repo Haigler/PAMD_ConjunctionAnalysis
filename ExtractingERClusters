@@ -1,0 +1,25 @@
+cd ~/Levin/Projects/Conjunction-Analysis/FSL/Exploratory.3rdLev/PAMD_InfOwnNeg-InfOwnPos_z3.1_PHPosReappraisal.gfeat/cope1.feat
+
+fslmaths cluster_mask_zstat1.nii.gz -uthr 1 -thr 1 OwnNeg-OwnPos_PosReappraisal_Cluster1_Mask.nii.gz
+
+fslmaths cluster_mask_zstat1.nii.gz -uthr 2 -thr 2 OwnNeg-OwnPos_PosReappraisal_Cluster2_Mask.nii.gz
+
+fslmaths cluster_mask_zstat1.nii.gz -uthr 3 -thr 3 OwnNeg-OwnPos_PosReappraisal_Cluster3_Mask.nii.gz
+
+
+cd ~/Levin/Projects/Conjunction-Analysis/FSL/Exploratory.3rdLev/PAMD_InfOwnNeg-InfOwnPos_z3.1_PHRumination.gfeat/cope1.feat
+
+fslmaths cluster_mask_zstat1.nii.gz -uthr 1 -thr 1 OwnNeg-OwnPos_Rumination_Cluster1_Mask.nii.gz
+
+fslmaths cluster_mask_zstat1.nii.gz -uthr 2 -thr 2 OwnNeg-OwnPos_Rumination_Cluster2_Mask.nii.gz
+
+fslmaths cluster_mask_zstat1.nii.gz -uthr 3 -thr 3 OwnNeg-OwnPos_Rumination_Cluster3_Mask.nii.gz
+
+
+cd ~/Levin/Projects/Conjunction-Analysis/FSL/Exploratory.3rdLev/PAMD_InfOwnNeg-InfOwnPos_z3.1_PHSelf-Blame.gfeat/cope1.feat
+
+fslmaths cluster_mask_zstat1.nii.gz -uthr 1 -thr 1 OwnNeg-OwnPos_Self-Blame_Cluster1_Mask.nii.gz
+
+fslmaths cluster_mask_zstat1.nii.gz -uthr 2 -thr 2 OwnNeg-OwnPos_Self-Blame_Cluster2_Mask.nii.gz
+
+fslmaths cluster_mask_zstat1.nii.gz -uthr 3 -thr 3 OwnNeg-OwnPos_Self-Blame_Cluster3_Mask.nii.gz
