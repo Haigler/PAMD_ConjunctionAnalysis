@@ -1,0 +1,4 @@
+cd  /home/katie/Levin/Projects/Conjunction-Analysis/Conjunction
+
+/home/katie/Levin/Projects/Conjunction-Analysis/Conjunction/easythresh_conj.sh  -s  /home/katie/Levin/Projects/Conjunction-Analysis/FSL/Group-LevelContrast/3rdLev/PAMD_InfOwnPos-Fix_z3.1_3rdLev.gfeat/cope1.feat/stats/smoothness  /home/katie/Levin/Projects/Conjunction-Analysis/FSL/Group-LevelContrast/3rdLev/PAMD_InfOwnPos-Fix_z3.1_3rdLev.gfeat/cope1.feat/stats/zstat1.nii.gz  /home/katie/Levin/Projects/Conjunction-Analysis/FSL/Group-LevelContrast/3rdLev/PAMD_LookPos-Fix_3rdLev.gfeat/cope1.feat/stats/zstat1.nii.gz  /home/katie/Levin/Projects/Conjunction-Analysis/FSL/Group-LevelContrast/3rdLev/PAMD_InfOwnPos-Fix_z3.1_3rdLev.gfeat/cope1.feat/mask.nii.gz  3.1  .05  /home/katie/Levin/Projects/Conjunction-Analysis/FSL/Group-LevelContrast/3rdLev/PAMD_InfOwnPos-Fix_z3.1_3rdLev.gfeat/cope1.feat/example_func.nii.gz  EPosConj_FSL_3.1
+	
